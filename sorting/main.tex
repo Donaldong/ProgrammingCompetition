@@ -1,0 +1,241 @@
+\documentclass{beamer}
+\mode<presentation> {
+    \usetheme{Madrid}
+}
+\setbeamertemplate{footline}[page number]
+\usepackage{graphicx} 
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage[plain]{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{multicol}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\title[Sorting]{Common Sorting Algorithms \cite{CLRS}}
+\author{Donald Dong}
+\institute[MBPT] 
+{
+    Monterey Bay  Programming Team \\ 
+    \medskip
+    \textit{xdong@csumb.edu}
+}
+\date{\today}
+\begin{document}
+\begin{frame}
+    \titlepage
+\end{frame}
+\begin{frame}{Overview}
+    \begin{multicols}{2}
+        \tableofcontents
+    \end{multicols}
+\end{frame}
+\section{Why Sorting?}
+\begin{frame}{Why Sorting?}
+    \begin{itemize}
+        \setlength\itemsep{2em}
+        \item Fast Search
+        \begin{itemize}
+            \item Binary Search
+            \item Exponential Search
+        \end{itemize}
+        \item Algorithms often use sorting as a key subroutine
+        \begin{itemize}
+            \item Uniqueness
+            \item Palindrome
+            \item Events Scheduling
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+\section{Characteristics}
+\begin{frame}{Characteristics}
+    \begin{itemize}
+        \setlength\itemsep{1em}
+        \item Running Time: The number of primitive operations or “steps” executed
+        \begin{itemize}
+            \setlength\itemsep{0.5em} 
+            \item Worst-case
+            \item Average-case
+            \item Best-case
+        \end{itemize}
+        \item In-place: The output is placed in the correct position 
+            while the algorithm is still executing
+        \item Stable: Two objects with equal keys appear in the same order 
+            in sorted output as they appear in the input unsorted array
+    \end{itemize}
+\end{frame}
+\section{Insertion Sort}
+\begin{frame}
+    \frametitle{Insertion Sort}
+    \begin{figure}[h]
+        \includegraphics[scale=0.3]{insertion/cards}
+    \end{figure}
+    \begin{center}
+        How to sort a hand of cards using insertion sort?
+    \end{center}
+\end{frame}
+\begin{frame}
+    \frametitle{Insertion Sort}
+    \begin{algorithm}[H]
+        \input{insertion/insertion}
+    \end{algorithm}
+\end{frame}
+\section{Selection Sort}
+\begin{frame}
+    \frametitle{Selection Sort}
+    \begin{figure}[h]
+        \includegraphics[scale=0.35]{selection/selection}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{Selection Sort}
+    \begin{algorithm}[H]
+        \input{selection/selection}
+    \end{algorithm}
+\end{frame}
+\section{Bubble Sort}
+\begin{frame}
+    \frametitle{Bubble Sort}
+    \begin{figure}[h]
+        \includegraphics[scale=0.9]{bubble/bubble}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{Bubble Sort}
+    \begin{algorithm}[H]
+        \input{bubble/bubble}
+    \end{algorithm}
+\end{frame}
+\section{Merge Sort}
+\begin{frame}
+    \frametitle{Merge Sort}
+    \begin{figure}[h]
+        \includegraphics[scale=0.3]{merge/merge}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{Merge Sort}
+    \begin{multicols}{2}
+        \input{merge/merge}
+        \input{merge/merge_sort}
+    \end{multicols}
+\end{frame}
+\section{Quick Sort}
+\begin{frame}{Quick Sort}
+    \begin{figure}[h]
+        \includegraphics[scale=0.4]{quick/quick}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{Quick Sort}
+    \begin{multicols}{2}
+        \input{quick/partition}
+        \vfill\null
+        \columnbreak
+        \input{quick/quick}
+    \end{multicols}
+\end{frame}
+\section{Heap Sort}
+\begin{frame}{Heap Sort}
+    \begin{figure}[h]
+        \includegraphics[scale=0.4]{heap/heap}
+    \end{figure}
+\end{frame}
+\section{Counting Sort}
+\begin{frame}{Counting Sort}
+    \begin{figure}[h]
+        \includegraphics[width=\textwidth]{counting/counting}
+    \end{figure}
+\end{frame}
+\section{Radix Sort}
+\begin{frame}{Radix Sort}
+    \begin{figure}[h]
+        \includegraphics[width=\textwidth]{radix/radix}
+    \end{figure}
+\end{frame}
+\section{Bucket Sort}
+\begin{frame}{Bucket Sort}
+    \begin{figure}[h]
+        \includegraphics{bucket/bucket}
+    \end{figure}
+\end{frame}
+\section{More Sorting Algorithms}
+\begin{frame}
+    \frametitle{Comparison Counting Sort}
+    \begin{algorithm}[H]
+        \input{comparison_counting/comparison_counting}
+    \end{algorithm}
+\end{frame}
+\section{Problems}
+\begin{frame}{Problem A}
+    Suppose that there is a restaurant and we know the arriving and leaving times of all customers on a certain day. 
+    Our task is to find out the maximum number of customers who visited the restaurant at the same time.\\
+    \begin{multicols}{2}
+        \begin{flushleft}
+            \bf{Input:}\normalfont Arriving \& Leaving\\ 
+            1 6\\
+            3 5\\
+            2 8
+        \end{flushleft}
+        \vfill\null
+        \columnbreak
+        \begin{flushleft}
+            \bf{Output:}\normalfont Number of customers\\
+            3
+        \end{flushleft}
+    \end{multicols}
+\end{frame}
+\begin{frame}{Problem A - 2}
+    Suppose that there is a restaurant and we know the arriving and leaving times of all customers on a certain day. 
+    Our task is to find out the maximum number of customers who visited the restaurant in certain time interval.\\
+    \begin{multicols}{2}
+        \begin{flushleft}
+            \bf{Input:}\normalfont Arriving \& Leaving\\
+            3\\
+            1 6\\
+            3 5\\
+            2 8\\
+            2\\
+            1 2\\
+            1 8
+        \end{flushleft}
+        \vfill\null
+        \columnbreak
+        \begin{flushleft}
+            \bf{Output:}\normalfont Number of customers\\
+            2\\
+            3
+        \end{flushleft}
+    \end{multicols}
+\end{frame}
+\begin{frame}{Problem B}
+    Given $n$ events with their starting and ending times, find a schedule that includes as many events as possible.
+    \begin{multicols}{2}
+        \begin{flushleft}
+            \bf{Input:}\normalfont Starting \& Ending\\
+            7\\
+            9 14\\
+            23 32\\
+            0 15\\
+            17 29\\
+            26 32\\
+            13 22\\
+            3 12
+        \end{flushleft}
+        \vfill\null
+        \columnbreak
+        \begin{flushleft}
+            \bf{Output:}\normalfont Number of events\\
+            3
+        \end{flushleft}
+    \end{multicols}
+\end{frame}
+\section{Summary}
+\begin{frame}
+    \frametitle{References}
+    \bibliographystyle{unsrt}
+    \bibliography{../ref}
+\end{frame}
+\end{document} 

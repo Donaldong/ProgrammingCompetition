@@ -1,0 +1,20 @@
+\begin{algorithmic}[1]
+\Statex{{\bf Algorithm} Comparison Counting Sort($A[0..n-1]$, $S[0..n-1]$)}
+\Statex{{\bf Input:} Array $A[0..n-1]$ of orderable values}
+\Statex{{\bf Output:} Array $S[0..n-1]$ of $A$'s elements sorted in non-decreasing order}
+\For{$i \gets 0$ {\bf to} $n - 1$}
+    \State $Count[i] \gets 0$
+\EndFor
+\For{$i \gets 0$ {\bf to} $n - 2$}
+    \For{$j \gets i + 1$ {\bf to} $n - 1$}
+        \If{$A[i] < A[j]$}
+            \State $Count[j] \gets Count[j] + 1$
+        \Else
+            \State $Count[i] \gets Count[i] + 1$
+        \EndIf
+    \EndFor
+\EndFor
+\For{$i \gets 0$ {\bf to} $n - 1$}
+    \State $S[Count[i]] \gets A[i]$
+\EndFor
+\end{algorithmic}

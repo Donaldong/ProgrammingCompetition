@@ -1,0 +1,9 @@
+\begin{algorithmic}[1]
+\Statex{\Call{Merge-Sort}{$A, p, r$}}
+\If{$p < r$}
+    \State $q = \floor{(p + r) / 2}$
+    \State \Call{Merge-Sort}{$A, p, q$}
+    \State \Call{Merge-Sort}{$A, q + 1, r$}
+    \State \Call{Merge}{$A, p, q, r$}
+\EndIf
+\end{algorithmic}

@@ -1,0 +1,13 @@
+\begin{algorithmic}[1]
+\Statex{\Call{Partition}{$A, p, r$}}
+    \State $x \gets A[r]$
+    \State $i \gets p - 1$
+    \For{$j \gets p$ {\bf to} $r - 1$}
+        \If{$A[j] < x$}
+            \State $i \gets i + 1$
+            \State \Call{swap}{$A[i], A[j]$}
+        \EndIf
+    \EndFor
+    \State \Call{swap}{$A[i + 1], A[r]$}
+    \State \Return $i + 1$
+\end{algorithmic}

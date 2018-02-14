@@ -1,0 +1,14 @@
+\begin{algorithmic}[1]
+\Statex{{\bf Algorithm} Insertion Sort($A[0..n-1]$)}
+\Statex{{\bf Input:} Array $A[0..n-1]$ of orderable values}
+\Statex{{\bf Output:} Array $A[0..n-1]$ in sorted in non-decreasing order}
+\For{$i \gets 1$ {\bf to} $n - 1$}
+    \State $key \gets A[i]$
+    \State $j \gets i - 1$
+    \While{$j \geq 0$ {and} $A[j] > key$}
+        \State $A[j + 1] \gets A[j]$
+        \State $j \gets j - 1$
+    \EndWhile
+    \State $A[j + 1] \gets key$
+\EndFor
+\end{algorithmic}

@@ -1,0 +1,8 @@
+\begin{algorithmic}[1]
+\Statex{\Call{Quick-Sort}{$A, p, r$}}
+\If{$p < r$}
+    \State $q = $ \Call{partition}{$A, p, r$}
+    \State \Call{Quick-Sort}{$A, p, q - 1$}
+    \State \Call{Quick-Sort}{$A, p + 1, q$}
+\EndIf
+\end{algorithmic}

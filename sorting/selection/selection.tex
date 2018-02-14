@@ -1,0 +1,14 @@
+\begin{algorithmic}[1]
+\Statex{{\bf Algorithm} Selection Sort($A[0..n-1]$)}
+\Statex{{\bf Input:} Array $A[0..n-1]$ of orderable values}
+\Statex{{\bf Output:} Array $A[0..n-1]$ in sorted in non-decreasing order}
+\For{$i \gets 0$ {\bf to} $n - 2$}
+    \State $min \gets i$
+    \For{$j \gets i + 1$ {\bf to} $n - 1$}
+        \If{$A[j] < A[min]$}
+            \State $min \gets j$
+        \EndIf
+    \EndFor
+    \State $swap(A[i], A[min])$
+\EndFor
+\end{algorithmic}

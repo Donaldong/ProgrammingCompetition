@@ -1,0 +1,12 @@
+\begin{algorithmic}[1]
+\Statex{{\bf Algorithm} Bubble Sort($A[0..n-1]$)}
+\Statex{{\bf Input:} Array $A[0..n-1]$ of orderable values}
+\Statex{{\bf Output:} Array $A[0..n-1]$ in sorted in non-decreasing order}
+\For{$i \gets 0$ {\bf to} $n - 2$}
+    \For{$j \gets 0$ {\bf to} $n - 2 - i$}
+        \If{$A[j + 1] < A[j]$}
+            \State $swap(A[j], A[j + 1])$
+        \EndIf
+    \EndFor
+\EndFor
+\end{algorithmic}

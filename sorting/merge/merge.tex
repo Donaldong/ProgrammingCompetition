@@ -1,0 +1,25 @@
+\begin{algorithmic}[1]
+\Statex{\Call{Merge}{$A, p, q, r$}}
+\State $l \gets q - p + 1$
+\State $r \gets r - q$
+\State Let $L[0..l]$ and $R[0..r]$ be new arrays
+\For{$i \gets 0$ {\bf to} $l - 1$}
+    \State $L[i] \gets A[p + i]$
+\EndFor
+\For{$j \gets 0$ {\bf to} $r - 1$}
+    \State $R[j] \gets A[q + 1 + j]$
+\EndFor
+\State $L[l] \gets \infty$
+\State $R[r] \gets \infty$
+\State $i \gets 0$
+\State $j \gets 0$
+\For{$k \gets p$ {\bf to} $r$}
+    \If{$L[i] \leq R[j]$}
+        \State $A[k] \gets L[i]$
+        \State $i \gets i + 1$
+    \Else
+        \State $A[k] \gets R[j]$
+        \State $j \gets j + 1$
+    \EndIf
+\EndFor
+\end{algorithmic}

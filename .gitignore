@@ -1,0 +1,15 @@
+*.aux
+*.o
+*.swp
+.tex
+*.dvi
+*.bbl
+*.blg
+*.toc
+*.log
+*.swp
+*.nav
+*.out
+*.snm
+*.vrb
+.DS_Store
